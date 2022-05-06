@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NativeSelect, FormControl, InputLabel } from "@mui/material";
 import "./styles.css";
-import { JsxElement } from "typescript";
+
 
 interface Idropdown {
   data: string[] | null;
