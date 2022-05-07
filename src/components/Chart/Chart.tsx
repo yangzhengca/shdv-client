@@ -1,7 +1,5 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { Typography } from "@mui/material";
-import './styles.css'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,6 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import './styles.css'
 
 ChartJS.register(
   CategoryScale,
@@ -33,8 +32,8 @@ export interface IPoint {
 }
 
 const Chart: React.FC<IChart> = ({ data }) => {
-  console.log(data);
 
+  // line chart options
   const options = {
     responsive: true,
     plugins: {
@@ -44,7 +43,7 @@ const Chart: React.FC<IChart> = ({ data }) => {
       },
       title: {
         display: true,
-        text: "Wattage Consumption Line Chart",
+        text: "Wattage Consumption Line Chart (Y: Wattage, X: DateTime)",
         padding: {
           top: 20,
           bottom: 20,

@@ -1,7 +1,7 @@
 .chartContainer {
 
   max-width: 95%;
-  margin-top: 3em;
+  /* margin-top: 3em; */
   display: flex;
   align-items: bottom;
 }

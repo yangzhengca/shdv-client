@@ -1,28 +1,21 @@
-.container {
+/* .container {
   background-color: azure;
   height: 100vh;
 
-}
-
+} */
 
 .title {
-  padding: 50px
-  
+  padding: 20px 0 5px 0 
 }
 
-/* .gridContainer {
+.spinnerContainer {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  /* flex-direction: column; 
+  justify-content: center;
+}
 
-} */
-
-/* .headerWrapper {
+.dropdownsContainer {
   display: flex;
-  justify-content: space-around;
-  flex-direction: column; 
-  align-items: center;
-
-
-} */
+  justify-content: center;
+  margin: auto 20px;
+}
