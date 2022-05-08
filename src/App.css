@@ -1,11 +1,5 @@
-/* .container {
-  background-color: azure;
-  height: 100vh;
-
-} */
-
 .title {
-  padding: 20px 0 5px 0 
+  padding-top: 10px; 
 }
 
 .spinnerContainer {
@@ -17,5 +11,5 @@
 .dropdownsContainer {
   display: flex;
   justify-content: center;
-  margin: auto 20px;
+
 }

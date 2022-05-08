@@ -2,13 +2,11 @@ import axios from "axios";
 
 const url: string = 'http://localhost:5000/api';
 
-// fetch serial number for dropdown menu
+// fetch serial numbers for dropdown menu
 export const fetchSerialNumbers = async () => {
   try {
     const { data } = await axios.get(`${url}/sns`);
-
     return data;
-
   } catch (error) {
     console.log(error)
   }
@@ -16,33 +14,18 @@ export const fetchSerialNumbers = async () => {
 
 // fetch device ID of current serial number for dropdown menu
 export const fetchDeviceIDs = async ( serialNumber: string ) => {
-  let changeableUrl = `${url}/all`;
-
-  if( serialNumber ){
-      changeableUrl=`${url}/dids/${serialNumber}`
-  }
-
-  try {
-      
-      const { data } = await axios.get(changeableUrl);
-      
+  try {      
+      const { data } = await axios.get(`${url}/dids/${serialNumber}`);      
       return data;
   } catch (error) {
       console.log(error)
   }
 }
 
-
-
-
+// fetch data for line chart
 export const fetchData = async ( serialNumber?: string, deviceID?: string ) => {
-
-  let changeableUrl = `${url}/data?serialNumber=${serialNumber}&deviceID=${deviceID}`
-
-
   try {
-      const { data } = await axios.get(changeableUrl);
-      
+      const { data } = await axios.get(`${url}/data?serialNumber=${serialNumber}&deviceID=${deviceID}`);      
       return data;
   } catch (error) {
       console.log(error)

@@ -1,13 +1,5 @@
 
-/* .formControl {
-  display: flex;
-  min-width: 5rem;
-  margin: auto 20px;
-  padding: 10px 20px;
-} */
-
 .dropdownContainer {
-  display: inline-flex;
-  margin: auto 20px;
+  margin: 0 20px;
   justify-content: center;
 }

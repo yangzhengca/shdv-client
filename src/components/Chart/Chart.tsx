@@ -33,7 +33,7 @@ export interface IPoint {
 
 const Chart: React.FC<IChart> = ({ data }) => {
 
-  // line chart options
+  // line chart options setting
   const options = {
     responsive: true,
     plugins: {
@@ -48,7 +48,7 @@ const Chart: React.FC<IChart> = ({ data }) => {
           top: 20,
           bottom: 20,
         },
-        position: "bottom" as const,
+        position: "top" as const,
         font: {
           size: 20,
           lineHeight: 1.2,

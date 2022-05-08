@@ -2,13 +2,13 @@ import React from "react";
 import { NativeSelect, FormControl, InputLabel } from "@mui/material";
 import "./styles.css";
 
-interface Idropdown {
+interface IDropdown {
   data: string[] | null;
   title: string;
   handleChange: (prop: string) => void;
 }
 
-const Dropdown: React.FC<Idropdown> = ({ data, title, handleChange }) => {
+const Dropdown: React.FC<IDropdown> = ({ data, title, handleChange }) => {
   return (
     <div className="dropdownContainer">
       <FormControl className="formControl">

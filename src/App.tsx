@@ -3,29 +3,19 @@ import { Typography, CircularProgress, Box } from "@mui/material";
 import "./App.css";
 import Dropdown from "./components/Dropdown/Dropdown";
 import Chart from "./components/Chart/Chart";
-
 import * as API from "./api/api";
-
 import { IPoint } from "./components/Chart/Chart";
 
-// interface IData {
-//   Wattage: string;
-//   DateTime: string;
-//   Device_ID: string;
-// }
-
 function App() {
+  //
   const [serialNumbers, setSerialNumbers] = useState<string[] | null>(null);
   const [deviceIDs, setDeviceIDs] = useState<string[] | null>(null);
-
   const [serialNumber, setSerialNumber] = useState("");
-  // const [deviceID, setDeviceID] = useState("");
   const [data, setData] = useState<IPoint[] | null>(null);
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-
+  // fetch serial numbers when load page
   useEffect(() => {
     const fetchSNs = async () => {
       try {
@@ -40,6 +30,7 @@ function App() {
     fetchSNs();
   }, []);
 
+  // fetch initial data, which contain Wattage consumptions of all serial numbers
   useEffect(() => {
     const fetchInitData = async () => {
       try {
@@ -54,7 +45,7 @@ function App() {
     fetchInitData();
   }, []);
 
-
+  // handle serial number change
   const handleSerialNumberChange = async (SN: string) => {
     try {
       setLoading(true);
@@ -73,7 +64,7 @@ function App() {
       setLoading(false);
     }
   };
-
+  // handle device ID change
   const handleDeviceIDChange = async (DID: string) => {
     try {
       setLoading(true);
@@ -83,7 +74,6 @@ function App() {
       } else {
         setData(await API.fetchData(serialNumber));
       }
-      // setDeviceID(DID);
       setLoading(false);
     } catch (error) {
       setError(true);
@@ -101,6 +91,7 @@ function App() {
       >
         Smart Homes Data Visualization
       </Typography>
+
       <div className="dropdownsContainer">
         <div>
           <Dropdown
@@ -123,6 +114,7 @@ function App() {
           <CircularProgress />
         </Box>
       )}
+
       {error && "Error! Could not fetch data from server."}
 
       <Chart data={data} />
