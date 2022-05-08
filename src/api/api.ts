@@ -23,9 +23,9 @@ export const fetchDeviceIDs = async ( serialNumber: string ) => {
 }
 
 // fetch data for line chart
-export const fetchData = async ( serialNumber?: string, deviceID?: string ) => {
+export const fetchData = async ( page: number, serialNumber: string = "", deviceID: string = "" ) => {
   try {
-      const { data } = await axios.get(`${url}/data?serialNumber=${serialNumber}&deviceID=${deviceID}`);      
+      const { data } = await axios.get(`${url}/data?page=${page}&serialNumber=${serialNumber}&deviceID=${deviceID}`);      
       return data;
   } catch (error) {
       console.log(error)
